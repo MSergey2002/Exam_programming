@@ -3,38 +3,17 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-// Console.Write("Enter number: ");
-// int n = Convert.ToInt32(Console.ReadLine());
-
-// Recursive(n);
-// Console.Read();
-
-// void Recursive(int num)
+// void InputN(int N)
 // {
-//     if (num > 0)
+//     if (N > 0)
 //     {
-//         Console.Write(num + " ");
-//         Recursive(num - 1);
+//         System.Console.Write($"{N}, ");
+//         InputN(N - 1);
 //     }
-//     else return;
 // }
 
-void NumsFromTo(int m)
-{
-    {        if (m > 0)
-        {
-            NumsFromTo(m - 1);
-            System.Console.Write(m + " ");
-        }
-        else 
-        {
-            return
-        }
-    }
-    else System.Console.Write(m + " ");
-}
+// InputN(5);
 
-NumsFromTo(5);
 
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
@@ -72,20 +51,19 @@ NumsFromTo(5);
 // m = 2, n = 3 -> A(m,n) = 9
 // m = 3, n = 2 -> A(m,n) = 29
 
-// int Ackkermann(int m, int n)
-// {
-//     if (m == 0)
-//     {
-//         return n + 1;
-//     }
-//     else if (n == 0)
-//     {
-//         return Ackkermann(m - 1, 1);
-//     }
-//     else
-//     {
-//         return Ackkermann(m - 1, Ackkermann(m, n - 1));
-//     }
-// }
-// System.Console.WriteLine(Ackkermann(2, 3));
-// System.Console.WriteLine(Ackkermann(3, 2));
+int Ackkermann(int n, int m)
+{
+    if (n == 0)
+        return m + 1;
+    else if (m == 0)
+        return Ackkermann(n - 1, 1);
+    else
+        return Ackkermann(n - 1, Ackkermann(n, m - 1));
+}
+
+int n = 2;
+int m = 3;
+System.Console.WriteLine($"Ackkermann's function ({n}, {m}) -> {Ackkermann(n, m)}");
+n = 3;
+m = 2;
+System.Console.WriteLine($"Ackkermann's function ({n}, {m}) -> {Ackkermann(n, m)}");
