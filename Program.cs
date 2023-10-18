@@ -3,21 +3,38 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-Console.Write("Enter number: ");
-int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Enter number: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-Recursive(n);
-Console.Read();
+// Recursive(n);
+// Console.Read();
 
-void Recursive(int num)
+// void Recursive(int num)
+// {
+//     if (num > 0)
+//     {
+//         Console.Write(num + " ");
+//         Recursive(num - 1);
+//     }
+//     else return;
+// }
+
+void NumsFromTo(int m)
 {
-    if (num > 0)
-    {
-        Console.Write(num + " ");
-        Recursive(num - 1);
+    {        if (m > 0)
+        {
+            NumsFromTo(m - 1);
+            System.Console.Write(m + " ");
+        }
+        else 
+        {
+            return
+        }
     }
-    else return;
+    else System.Console.Write(m + " ");
 }
+
+NumsFromTo(5);
 
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
